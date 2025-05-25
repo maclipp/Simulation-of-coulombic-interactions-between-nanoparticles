@@ -56,14 +56,14 @@ CDmolecule=A1*A2*A3*omega
 
 
 #Calculations of CD NP
-# r=np.array([R,R,R])
-# p=np.array([R,R,R], dtype=complex)
-# p[0]=complex(1,me*OmegaLSPR*r[0])
-# p[1]=complex(0,me*OmegaLSPR*r[1])
-# p[2]=complex(0,me*OmegaLSPR*r[2])
-# u12=e*r
-# m12=-e/(2*me*c)*np.cross(r,p)
-# P=np.array([[1-Beta/R**3,0,0],[0,1-Beta/R**3,0],[0,0,1+2*Beta/R**3]])
+r=np.array([R,R,R])
+p=np.array([R,R,R], dtype=complex)
+p[0]=complex(1,me*OmegaLSPR*r[0])
+p[1]=complex(0,me*OmegaLSPR*r[1])
+p[2]=complex(0,me*OmegaLSPR*r[2])
+u12=e*r
+m12=-e/(2*me*c)*np.cross(r,p)
+P=np.array([[1-Beta/R**3,0,0],[0,1-Beta/R**3,0],[0,0,1+2*Beta/R**3]])
 B1=(8/9)*(np.abs(3*Eps0/(EpsAu+2*Eps0))**2)*((aNP**3)/(np.sqrt(Eps0)*R**3))
 # B2=(OmegaLSPR**2)/(omega*(omega**2 + RelaxAu**2))
 B2=EpsAu
@@ -79,7 +79,4 @@ plt.figure()
 # plt.plot(wavelength,CDnp)
 plt.plot(wavelength,CD)
 # plt.title('Protein band width= '+str(int(GammaW))+'nm')
-
-#1 Brakuje odpowiednich stałych aby policzyć rzeczywiste wartosci sprzezenia  dipolowego
-#2 Brakuje w modelu opisu anizotropowych nanoczastek ktore posiadaja tez plazmon poprzeczny
 
